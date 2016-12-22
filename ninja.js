@@ -18,8 +18,10 @@ $('a').hover(function(e)
     {
         console.log('hovered for 2 seconds');
         e.preventDefault();
-        $("#overlay iframe").attr("src", $(this).attr('href'));
-
+        console.log($(this).attr('href'));
+		console.log($('#overlay iframe').attr('src'));
+        $('#overlay iframe').attr('src', $(e.target).attr('href'));
+		
         $('#overlay').css('left',e.pageX); 
         $('#overlay').css('top',e.pageY);
         $('#overlay').css('display','inline');
