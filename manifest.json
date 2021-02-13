@@ -1,34 +1,21 @@
 {	
-  // Required
   "manifest_version": 2,
   "name": "ClickBait Ninja",
   "version": "1.0",
 
-  // Recommended
   "description": "An app that uses natural language processing to answer clickbait",
   "icons": {
     "128": "icon128.png"
   },
 
-  "browser_action": {
-    "default_icon": { 
-        "32": "icon128.png"            
-    },
-    "default_title": "ClickBait Ninja",      
-    "default_popup": "popup.html"        
+  "permissions": ["declarativeContent", "storage"],
+
+  "background": {
+    "scripts": ["my_file.js"],
+    "persistent": false
   },
 
-  "content_scripts": [
-    {
-      "matches": ["https://*/*"],
-      "js": ["content-script.js"]
-    }
-  ]//,
-
-  //"web_accessible_resources" : ["my_file.js"],
-
-  //"background": {
-  //  "scripts": ["my_file.js"],
-  //  "persistent": false
-  //}
+  "browser_action": {
+    "default_popup": "popup.html"
+  }
 }
